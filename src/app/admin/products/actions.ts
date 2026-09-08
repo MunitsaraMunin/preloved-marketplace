@@ -7,8 +7,6 @@ import { productSchema } from "@/lib/validations/product";
 import { slugify } from "@/lib/utils";
 import type { ProductStatus } from "@/types";
 
-const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
-
 function revalidateProductPaths(id?: string) {
   revalidatePath("/shop");
   revalidatePath("/");
@@ -75,43 +73,6 @@ async function generateUniqueSlug(
   }
 }
 
-async function uploadImages(
-  supabase: Awaited<ReturnType<typeof requireAdmin>>["supabase"],
-  productId: string,
-  files: File[],
-  startingSortOrder: number,
-  firstIsPrimary: boolean,
-) {
-  let sortOrder = startingSortOrder;
-  for (const file of files) {
-    if (file.size === 0) continue;
-    if (file.size > MAX_IMAGE_BYTES) {
-      throw new Error(`"${file.name}" is larger than 8MB.`);
-    }
-
-    const extension = file.name.split(".").pop() ?? "jpg";
-    const path = `${productId}/${crypto.randomUUID()}.${extension}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from("product-images")
-      .upload(path, file, { contentType: file.type, upsert: false });
-    if (uploadError) throw new Error(`Failed to upload "${file.name}": ${uploadError.message}`);
-
-    const { data: publicUrl } = supabase.storage.from("product-images").getPublicUrl(path);
-
-    const { error: insertError } = await supabase.from("product_images").insert({
-      product_id: productId,
-      image_url: publicUrl.publicUrl,
-      storage_path: path,
-      sort_order: sortOrder,
-      is_primary: firstIsPrimary && sortOrder === startingSortOrder,
-    });
-    if (insertError) throw new Error(insertError.message);
-
-    sortOrder += 1;
-  }
-}
-
 export async function createProduct(formData: FormData): Promise<{ id: string }> {
   const { supabase, user } = await requireAdmin();
 
@@ -152,9 +113,6 @@ export async function createProduct(formData: FormData): Promise<{ id: string }>
     .single();
 
   if (error || !product) throw new Error(error?.message ?? "Failed to create product.");
-
-  const files = formData.getAll("images").filter((entry): entry is File => entry instanceof File);
-  await uploadImages(supabase, product.id, files, 0, true);
 
   revalidateProductPaths(product.id);
   return { id: product.id };
@@ -218,7 +176,18 @@ export async function deleteProduct(id: string): Promise<void> {
   revalidateProductPaths(id);
 }
 
-export async function uploadProductImages(productId: string, formData: FormData): Promise<void> {
+/**
+ * Records photos that were already uploaded to Supabase Storage directly
+ * from the browser (see src/lib/supabase/storage.ts) — this action only
+ * ever handles small URL/path strings, never image bytes, so it stays fast
+ * and well under the Server Action body size limit no matter how many or
+ * how large the photos were.
+ */
+export async function attachProductImages(
+  productId: string,
+  images: { url: string; path: string }[],
+): Promise<void> {
+  if (images.length === 0) return;
   const { supabase } = await requireAdmin();
 
   const { count } = await supabase
@@ -226,8 +195,17 @@ export async function uploadProductImages(productId: string, formData: FormData)
     .select("id", { count: "exact", head: true })
     .eq("product_id", productId);
 
-  const files = formData.getAll("images").filter((entry): entry is File => entry instanceof File);
-  await uploadImages(supabase, productId, files, count ?? 0, (count ?? 0) === 0);
+  const startingSortOrder = count ?? 0;
+  const rows = images.map((image, index) => ({
+    product_id: productId,
+    image_url: image.url,
+    storage_path: image.path,
+    sort_order: startingSortOrder + index,
+    is_primary: startingSortOrder === 0 && index === 0,
+  }));
+
+  const { error } = await supabase.from("product_images").insert(rows);
+  if (error) throw new Error(error.message);
 
   revalidateProductPaths(productId);
 }

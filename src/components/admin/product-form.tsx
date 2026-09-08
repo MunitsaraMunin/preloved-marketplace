@@ -19,7 +19,8 @@ import {
 import { ImageDropzone } from "@/components/admin/image-dropzone";
 import { ProductImagesManager } from "@/components/admin/product-images-manager";
 import { productSchema, type ProductFormValues } from "@/lib/validations/product";
-import { createProduct, updateProduct } from "@/app/admin/products/actions";
+import { createProduct, updateProduct, attachProductImages } from "@/app/admin/products/actions";
+import { uploadProductImageFile } from "@/lib/supabase/storage";
 import { CONDITION_OPTIONS, SIZES } from "@/lib/constants";
 import type { Category, Product } from "@/types";
 
@@ -101,14 +102,25 @@ export function ProductForm({
       const value = values.measurements?.[key];
       if (value) formData.set(`measurements.${key}`, String(value));
     }
-    if (mode === "create") {
-      images.forEach((file) => formData.append("images", file));
-    }
 
     try {
       if (mode === "create") {
         const { id } = await createProduct(formData);
-        toast.success("Product created");
+
+        try {
+          const uploaded = await Promise.all(
+            images.map((file) => uploadProductImageFile(id, file)),
+          );
+          await attachProductImages(id, uploaded);
+          toast.success("Product created");
+        } catch (uploadError) {
+          toast.error(
+            uploadError instanceof Error
+              ? `Product created, but photos failed to upload: ${uploadError.message}`
+              : "Product created, but photos failed to upload.",
+          );
+        }
+
         router.push(`/admin/products/${id}/edit`);
       } else if (product) {
         await updateProduct(product.id, formData);

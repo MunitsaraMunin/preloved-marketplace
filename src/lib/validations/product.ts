@@ -27,13 +27,13 @@ export const productSchema = z.object({
   tags: z.array(z.string().trim().min(1)).default([]),
   measurements: z
     .object({
-      shoulder: z.coerce.number().positive().optional(),
-      chest: z.coerce.number().positive().optional(),
-      waist: z.coerce.number().positive().optional(),
-      hip: z.coerce.number().positive().optional(),
-      length: z.coerce.number().positive().optional(),
-      sleeve: z.coerce.number().positive().optional(),
-      inseam: z.coerce.number().positive().optional(),
+      shoulder: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
+      chest: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
+      waist: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
+      hip: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
+      length: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
+      sleeve: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
+      inseam: z.preprocess(emptyToUndefined, z.coerce.number().positive().optional()),
     })
     .partial()
     .default({}),

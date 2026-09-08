@@ -19,10 +19,11 @@ import {
 } from "@/components/ui/alert-dialog";
 import { ImageDropzone } from "@/components/admin/image-dropzone";
 import {
+  attachProductImages,
   deleteProductImage,
   setPrimaryImage,
-  uploadProductImages,
 } from "@/app/admin/products/actions";
+import { uploadProductImageFile } from "@/lib/supabase/storage";
 import type { ProductImage } from "@/types";
 
 export function ProductImagesManager({
@@ -39,12 +40,13 @@ export function ProductImagesManager({
 
   function handleUpload() {
     if (pendingFiles.length === 0) return;
-    const formData = new FormData();
-    pendingFiles.forEach((file) => formData.append("images", file));
 
     startUpload(async () => {
       try {
-        await uploadProductImages(productId, formData);
+        const uploaded = await Promise.all(
+          pendingFiles.map((file) => uploadProductImageFile(productId, file)),
+        );
+        await attachProductImages(productId, uploaded);
         setPendingFiles([]);
         toast.success("Photos uploaded");
         router.refresh();
