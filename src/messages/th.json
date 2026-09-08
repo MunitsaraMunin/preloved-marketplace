@@ -1,0 +1,171 @@
+{
+  "nav": {
+    "shop": "ช้อป",
+    "newArrivals": "มาใหม่",
+    "about": "เกี่ยวกับเรา",
+    "search": "ค้นหา",
+    "closeSearch": "ปิดการค้นหา",
+    "searchPlaceholder": "ค้นหาจากชื่อ แบรนด์ หรือหมวดหมู่…",
+    "searchSubmit": "ค้นหา",
+    "openMenu": "เปิดเมนู",
+    "siteNavigation": "เมนูนำทาง",
+    "categories": "หมวดหมู่"
+  },
+  "hero": {
+    "title": "เสื้อผ้ามือสอง รอเจ้าของคนใหม่",
+    "subtitle": "เสื้อผ้ามือสองคัดสรรอย่างพิถีพิถัน ทีละชิ้น",
+    "cta": "เลือกซื้อคอลเลกชัน",
+    "secondaryCta": "เรื่องราวของเรา"
+  },
+  "home": {
+    "shopByCategory": "ช้อปตามหมวดหมู่",
+    "newArrivals": "สินค้ามาใหม่",
+    "viewAll": "ดูทั้งหมด",
+    "trustTitle": "คัดสรรทีละชิ้น",
+    "trustBody": "ทุกชิ้นถูกคัดเลือก ตรวจสอบ และถ่ายภาพเองทีละชิ้น เพราะของมือสองไม่ได้แปลว่าด้อยคุณภาพ เมื่อขายแล้วก็จะไม่มีอีก"
+  },
+  "footer": {
+    "shopHeading": "ช้อป",
+    "allPieces": "สินค้าทั้งหมด",
+    "newArrivals": "สินค้ามาใหม่",
+    "infoHeading": "ข้อมูล",
+    "about": "เกี่ยวกับเรา",
+    "copyright": "ทุกชิ้นมีเพียงชิ้นเดียว"
+  },
+  "shop": {
+    "title": "ช้อป",
+    "resultsFor": "ผลการค้นหา “{query}”",
+    "pieceCount": "{count, plural, other {มีสินค้า # ชิ้น}}",
+    "filtersButton": "ตัวกรอง",
+    "filtersSheetTitle": "ตัวกรอง",
+    "filtersSheetDescription": "ปรับแต่งรายการสินค้า",
+    "sortLabel": "จัดเรียงสินค้า"
+  },
+  "filters": {
+    "title": "ตัวกรอง",
+    "all": "ทั้งหมด",
+    "clearAll": "ล้างทั้งหมด",
+    "price": "ราคา",
+    "size": "ไซส์",
+    "condition": "สภาพสินค้า",
+    "brand": "แบรนด์",
+    "color": "สี"
+  },
+  "sort": {
+    "newest": "ใหม่ล่าสุด",
+    "price_asc": "ราคา: ต่ำไปสูง",
+    "price_desc": "ราคา: สูงไปต่ำ"
+  },
+  "conditions": {
+    "new_with_tags": "ใหม่ ป้ายห้อย",
+    "like_new": "เหมือนใหม่",
+    "excellent": "ดีมาก",
+    "good": "ดี",
+    "fair": "พอใช้"
+  },
+  "status": {
+    "available": "พร้อมขาย",
+    "reserved": "ถูกจองแล้ว",
+    "sold": "ขายแล้ว",
+    "hidden": "ซ่อนอยู่"
+  },
+  "contactMethods": {
+    "phone": "โทรศัพท์",
+    "line": "LINE",
+    "instagram": "Instagram",
+    "email": "อีเมล",
+    "other": "อื่นๆ"
+  },
+  "product": {
+    "sale": "ลดราคา",
+    "noImage": "ไม่มีรูปภาพ",
+    "sizeCondition": "ไซส์ {size} · {condition}"
+  },
+  "productDetail": {
+    "backToShop": "กลับไปหน้าช้อป",
+    "unavailableTitle": "สินค้าชิ้นนี้ไม่พร้อมจำหน่ายแล้ว",
+    "unavailableDescription": "อาจถูกผู้ขายนำออกจากระบบ",
+    "description": "รายละเอียดสินค้า",
+    "measurements": "ขนาดสินค้า",
+    "youMayAlsoLike": "สินค้าที่คุณอาจสนใจ",
+    "previousImage": "รูปก่อนหน้า",
+    "nextImage": "รูปถัดไป",
+    "expandImage": "ดูภาพขนาดเต็ม",
+    "noImageAvailable": "ไม่มีรูปภาพ",
+    "size": "ไซส์",
+    "condition": "สภาพสินค้า",
+    "color": "สี",
+    "material": "วัสดุ"
+  },
+  "buyPanel": {
+    "cta": "สนใจสินค้าชิ้นนี้",
+    "sold": "ขายแล้ว",
+    "unavailable": "ไม่พร้อมจำหน่าย",
+    "reservedMessage": "สินค้าชิ้นนี้ถูกลูกค้าท่านอื่นจองไว้อยู่",
+    "soldMessage": "สินค้าชิ้นนี้ถูกขายไปแล้ว",
+    "hiddenMessage": "สินค้าชิ้นนี้ยังไม่พร้อมจำหน่ายในขณะนี้",
+    "dialogTitle": "สนใจสินค้าชิ้นนี้ใช่ไหม?",
+    "dialogDescription": "ส่งข้อมูลติดต่อของคุณมา แล้วเราจะติดต่อกลับไปนัดหมายกัน",
+    "requestSentTitle": "ส่งคำขอแล้ว",
+    "requestSentDescription": "เราจะติดต่อกลับเกี่ยวกับ “{name}” ในเร็วๆ นี้",
+    "close": "ปิด"
+  },
+  "orderForm": {
+    "intro": "บอกวิธีติดต่อคุณเกี่ยวกับ {name}",
+    "nameLabel": "ชื่อ",
+    "namePlaceholder": "ชื่อของคุณ",
+    "nameRequired": "กรุณากรอกชื่อของคุณ",
+    "contactMethodLabel": "ช่องทางติดต่อ",
+    "contactValueLabelPhone": "เบอร์โทรศัพท์",
+    "contactValueLabelLine": "LINE ID",
+    "contactValueLabelInstagram": "ไอดี Instagram",
+    "contactValueLabelEmail": "อีเมล",
+    "contactValueLabelOther": "ช่องทางติดต่อ",
+    "contactValuePlaceholder": "เช่น @yourname",
+    "contactValueRequired": "กรุณากรอกช่องทางติดต่อของคุณ",
+    "messageLabel": "ข้อความ (ไม่บังคับ)",
+    "messagePlaceholder": "มีคำถามเกี่ยวกับสินค้าชิ้นนี้ไหม?",
+    "submit": "ส่งคำขอ",
+    "submitting": "กำลังส่ง…",
+    "genericError": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
+    "errorItemUnavailable": "ขออภัย สินค้าชิ้นนี้ไม่พร้อมจำหน่ายแล้ว",
+    "errorItemNotFound": "ไม่พบสินค้าชิ้นนี้",
+    "errorInvalidDetails": "กรุณาตรวจสอบข้อมูลของคุณอีกครั้ง"
+  },
+  "emptyState": {
+    "noResultsTitle": "ไม่พบสินค้าที่ตรงกับการค้นหา",
+    "noResultsDescription": "ลองปรับตัวกรองหรือคำค้นหาใหม่",
+    "nothingTitle": "ยังไม่มีสินค้าที่นี่",
+    "nothingDescription": "ตอนนี้ยังไม่มีสินค้าพร้อมจำหน่าย แวะมาดูใหม่เร็วๆ นี้"
+  },
+  "about": {
+    "title": "เกี่ยวกับ {siteName}",
+    "paragraph1": "{siteName} เริ่มต้นจากโปรเจกต์ส่วนตัวเล็กๆ จากตู้เสื้อผ้าที่เต็มไปด้วยเสื้อผ้าที่เคยรักและอยากให้มีชีวิตใหม่ พร้อมความเชื่อว่าการช้อปมือสองควรรู้สึกพิถีพิถัน ไม่ใช่วุ่นวายสะเปะสะปะ",
+    "paragraph2": "ทุกชิ้นที่นี่ถูกคัดเลือก ตรวจสอบ และถ่ายภาพเองทีละชิ้น ไม่มีการลงขายแบบเหมาโหล สิ่งที่คุณเห็นคือสิ่งที่มีอยู่จริง และเมื่อขายแล้วก็จะไม่มีอีก",
+    "paragraph3": "ตอนนี้ร้านนี้ดำเนินการโดยคนคนเดียว คัดสินค้าและแพ็คส่งเองทุกออเดอร์ แผนในอนาคตคืออยากขยายให้เป็นมาร์เก็ตเพลสสำหรับผู้ขายรายอื่นที่คัดสรรของมือสองอย่างพิถีพิถันแบบเดียวกัน แต่ตอนนี้ขอเริ่มจากตู้เสื้อผ้าเดียวก่อน"
+  },
+  "notFound": {
+    "title": "ไม่พบหน้านี้",
+    "description": "หน้าที่คุณกำลังมองหาไม่มีอยู่ หรือถูกย้ายไปแล้ว",
+    "back": "กลับไปหน้าช้อป"
+  },
+  "measurements": {
+    "shoulder": "ไหล่",
+    "chest": "รอบอก",
+    "waist": "รอบเอว",
+    "hip": "รอบสะโพก",
+    "length": "ความยาว",
+    "sleeve": "แขน",
+    "inseam": "ความยาวขาใน",
+    "rise": "ช่วงเป้า",
+    "legOpening": "ปากขา",
+    "width": "ความกว้าง",
+    "height": "ความสูง",
+    "depth": "ความลึก",
+    "strapDrop": "ความยาวสายสะพาย",
+    "unitCm": "{value} ซม."
+  },
+  "language": {
+    "label": "ภาษา"
+  }
+}

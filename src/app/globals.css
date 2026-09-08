@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #faf9f7;
+  --foreground: #171412;
+  --muted: #f0eeea;
+  --muted-foreground: #6b655e;
+  --border: #e4e1da;
+  --accent: #c17a6f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+  --animate-marquee: marquee 32s linear infinite;
+
+  /*
+   * Warm, muted "greige" replaces Tailwind's default achromatic neutral
+   * scale project-wide — every existing `text-neutral-900`, `border-
+   * neutral-200`, etc. picks this up automatically, for a calmer,
+   * Muji-adjacent base instead of stark black/white/grey.
+   */
+  --color-neutral-50: oklch(98.3% 0.004 60);
+  --color-neutral-100: oklch(96.2% 0.006 60);
+  --color-neutral-200: oklch(91.5% 0.009 55);
+  --color-neutral-300: oklch(85% 0.012 55);
+  --color-neutral-400: oklch(69% 0.016 50);
+  --color-neutral-500: oklch(55% 0.018 45);
+  --color-neutral-600: oklch(44% 0.018 40);
+  --color-neutral-700: oklch(36% 0.016 38);
+  --color-neutral-800: oklch(26% 0.014 35);
+  --color-neutral-900: oklch(19% 0.012 32);
+  --color-neutral-950: oklch(13% 0.01 30);
+
+  /*
+   * Soft dusty-rose accent — used sparingly (primary buttons, sale tags,
+   * active category/filter chips, selection highlight) as the "little bit
+   * feminine" touch against the warm-neutral base.
+   */
+  --color-accent-50: oklch(97% 0.012 18);
+  --color-accent-100: oklch(93.5% 0.03 18);
+  --color-accent-200: oklch(87% 0.05 17);
+  --color-accent-300: oklch(79% 0.07 16);
+  --color-accent-400: oklch(70% 0.09 15);
+  --color-accent-500: oklch(61% 0.11 14);
+  --color-accent-600: oklch(52% 0.115 12);
+  --color-accent-700: oklch(43% 0.1 10);
+  --color-accent-800: oklch(34% 0.08 8);
+  --color-accent-900: oklch(26% 0.06 6);
+
+  /* A gentler corner radius, applied everywhere `rounded-sm` is used. */
+  --radius-sm: 0.5rem;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Fraunces' variable "SOFT" axis rounds off the serif slightly for a
+   gentler, warmer headline feel than the default cut. */
+.font-serif {
+  font-variation-settings: "SOFT" 60;
+}
+
+/* Respect prefers-reduced-motion across the whole app. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

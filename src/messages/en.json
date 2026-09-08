@@ -1,0 +1,171 @@
+{
+  "nav": {
+    "shop": "Shop",
+    "newArrivals": "New Arrivals",
+    "about": "About",
+    "search": "Search",
+    "closeSearch": "Close search",
+    "searchPlaceholder": "Search by name, brand, or category…",
+    "searchSubmit": "Search",
+    "openMenu": "Open menu",
+    "siteNavigation": "Site navigation",
+    "categories": "Categories"
+  },
+  "hero": {
+    "title": "Pre-loved pieces, looking for a new home.",
+    "subtitle": "Curated secondhand clothing, selected one piece at a time.",
+    "cta": "Shop Collection",
+    "secondaryCta": "Our story"
+  },
+  "home": {
+    "shopByCategory": "Shop by category",
+    "newArrivals": "New arrivals",
+    "viewAll": "View all",
+    "trustTitle": "One piece at a time",
+    "trustBody": "Every item is hand-selected, inspected and photographed individually — because secondhand doesn't mean second best. Once a piece is gone, it's gone for good."
+  },
+  "footer": {
+    "shopHeading": "Shop",
+    "allPieces": "All pieces",
+    "newArrivals": "New arrivals",
+    "infoHeading": "Info",
+    "about": "About",
+    "copyright": "All pieces one-of-a-kind."
+  },
+  "shop": {
+    "title": "Shop",
+    "resultsFor": "Results for “{query}”",
+    "pieceCount": "{count, plural, one {# piece available} other {# pieces available}}",
+    "filtersButton": "Filters",
+    "filtersSheetTitle": "Filters",
+    "filtersSheetDescription": "Refine the product list",
+    "sortLabel": "Sort products"
+  },
+  "filters": {
+    "title": "Filters",
+    "all": "All",
+    "clearAll": "Clear all",
+    "price": "Price",
+    "size": "Size",
+    "condition": "Condition",
+    "brand": "Brand",
+    "color": "Color"
+  },
+  "sort": {
+    "newest": "Newest",
+    "price_asc": "Price: Low to High",
+    "price_desc": "Price: High to Low"
+  },
+  "conditions": {
+    "new_with_tags": "New with tags",
+    "like_new": "Like new",
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair"
+  },
+  "status": {
+    "available": "Available",
+    "reserved": "Reserved",
+    "sold": "Sold",
+    "hidden": "Hidden"
+  },
+  "contactMethods": {
+    "phone": "Phone",
+    "line": "LINE",
+    "instagram": "Instagram",
+    "email": "Email",
+    "other": "Other"
+  },
+  "product": {
+    "sale": "Sale",
+    "noImage": "No image",
+    "sizeCondition": "Size {size} · {condition}"
+  },
+  "productDetail": {
+    "backToShop": "Back to shop",
+    "unavailableTitle": "This item is no longer available.",
+    "unavailableDescription": "It may have been removed by the seller.",
+    "description": "Description",
+    "measurements": "Measurements",
+    "youMayAlsoLike": "You may also like",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "expandImage": "View full size",
+    "noImageAvailable": "No image available",
+    "size": "Size",
+    "condition": "Condition",
+    "color": "Color",
+    "material": "Material"
+  },
+  "buyPanel": {
+    "cta": "Interested in this item",
+    "sold": "Sold",
+    "unavailable": "Unavailable",
+    "reservedMessage": "This item is currently reserved by another customer.",
+    "soldMessage": "This item has already been sold.",
+    "hiddenMessage": "This item is not currently available.",
+    "dialogTitle": "Interested in this item?",
+    "dialogDescription": "Send your details and we'll get back to you to arrange it.",
+    "requestSentTitle": "Request sent",
+    "requestSentDescription": "We'll reach out about “{name}” shortly.",
+    "close": "Close"
+  },
+  "orderForm": {
+    "intro": "Tell us how to reach you about {name}.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "nameRequired": "Please enter your name",
+    "contactMethodLabel": "Contact method",
+    "contactValueLabelPhone": "Phone number",
+    "contactValueLabelLine": "LINE ID",
+    "contactValueLabelInstagram": "Instagram handle",
+    "contactValueLabelEmail": "Email address",
+    "contactValueLabelOther": "Where to reach you",
+    "contactValuePlaceholder": "e.g. @yourname",
+    "contactValueRequired": "Please enter a way to reach you",
+    "messageLabel": "Message (optional)",
+    "messagePlaceholder": "Any questions about this piece?",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "genericError": "Something went wrong. Please try again.",
+    "errorItemUnavailable": "Sorry, this item is no longer available.",
+    "errorItemNotFound": "This item could not be found.",
+    "errorInvalidDetails": "Please check your details."
+  },
+  "emptyState": {
+    "noResultsTitle": "No pieces match your search.",
+    "noResultsDescription": "Try adjusting your filters or search terms.",
+    "nothingTitle": "Nothing here yet.",
+    "nothingDescription": "No pieces are currently available. Check back soon."
+  },
+  "about": {
+    "title": "About {siteName}",
+    "paragraph1": "{siteName} started as a small personal project: a closet full of well-loved clothing that deserved a second life, and a belief that secondhand shopping should feel considered rather than chaotic.",
+    "paragraph2": "Every piece here is selected, inspected and photographed individually. Nothing is mass-listed — what you see is what's actually in stock, and once a piece sells, it's gone for good.",
+    "paragraph3": "Right now this is a one-person shop, hand-picking and shipping every order. The plan is to grow into a marketplace for other sellers doing the same kind of careful, considered secondhand curation — but for now, it's just one closet at a time."
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "description": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to shop"
+  },
+  "measurements": {
+    "shoulder": "Shoulder",
+    "chest": "Chest",
+    "waist": "Waist",
+    "hip": "Hip",
+    "length": "Length",
+    "sleeve": "Sleeve",
+    "inseam": "Inseam",
+    "rise": "Rise",
+    "legOpening": "Leg opening",
+    "width": "Width",
+    "height": "Height",
+    "depth": "Depth",
+    "strapDrop": "Strap drop",
+    "unitCm": "{value} cm"
+  },
+  "language": {
+    "label": "Language"
+  }
+}
