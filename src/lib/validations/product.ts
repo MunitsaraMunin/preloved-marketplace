@@ -1,7 +1,10 @@
 import { z } from "zod";
 
+// A FormData field that was never appended (optional fields the admin left
+// blank in the create form) reads back as `null` on the server, not `""` —
+// treat both as "not provided" so z.optional() doesn't reject the field.
 const emptyToUndefined = (value: unknown) =>
-  typeof value === "string" && value.trim() === "" ? undefined : value;
+  value === null || (typeof value === "string" && value.trim() === "") ? undefined : value;
 
 export const productSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters"),
